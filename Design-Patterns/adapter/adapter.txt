@@ -1,0 +1,6 @@
+Goal of adapter pattern is to adapt an existing pattern to with with a newer/different functionality peice of code.
+
+For example:
+If our existing code uses config.json but the next piece of code needs iput in XML, then hwo to do that ??
+
+

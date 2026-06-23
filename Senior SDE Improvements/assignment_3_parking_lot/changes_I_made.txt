@@ -1,0 +1,17 @@
+
+File	            Responsibility
+vehicles.py	        Vehicle types know their own allowed spot sizes
+spots.py	        Each spot manages its own state (park, remove, availability)
+pricing.py	        Swappable fee calculation strategies
+parking_lot.py	    Orchestrator — delegates to the above, no business logic of its own
+The key design      principles you applied:
+
+Single Responsibility — each class has one job
+
+Open/Closed — add a new vehicle type or pricing strategy without touching existing code
+
+Strategy Pattern — PricingStrategy is swappable at runtime (set_pricing_strategy)
+
+Encapsulation — ParkingSpot owns its state, Vehicle owns its rules
+
+The original ParkingLot had if vehicle_type == "car" and manual dict manipulation everywhere. Now it has none of that — it just asks objects to do their jobs.
